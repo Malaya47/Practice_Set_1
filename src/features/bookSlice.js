@@ -3,7 +3,9 @@ import axios from "axios";
 
 // Async thunk for fetching books
 export const fetchBooks = createAsyncThunk("books/fetchBooks", async () => {
-  const response = await axios.get(`https://jsgsjp-3000.csb.app/books`);
+  const response = await axios.get(
+    `https://reduxtoolkit-book-list-backend.vercel.app/books`
+  );
   return response.data;
 });
 
@@ -12,7 +14,7 @@ export const postBookData = createAsyncThunk(
   "book/postBookData",
   async (bookData) => {
     const response = await axios.post(
-      `https://jsgsjp-3000.csb.app/books`,
+      `https://reduxtoolkit-book-list-backend.vercel.app/books`,
       bookData
     );
     return response.data;
@@ -24,7 +26,7 @@ export const deleteBookData = createAsyncThunk(
   "books/deleteBook",
   async (id) => {
     const response = await axios.delete(
-      `https://jsgsjp-3000.csb.app/books/${id}`
+      `https://reduxtoolkit-book-list-backend.vercel.app/books/${id}`
     );
     return response.data;
   }
@@ -35,7 +37,7 @@ export const updateBookAsync = createAsyncThunk(
   "book/updateBook",
   async (book) => {
     const response = await axios.put(
-      `https://jsgsjp-3000.csb.app/books/updateBook/${book?._id}`,
+      `https://reduxtoolkit-book-list-backend.vercel.app/updateBook/${book?._id}`,
       book
     );
     return response.data;
